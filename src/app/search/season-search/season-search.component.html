@@ -1,0 +1,48 @@
+<div class="container-fluid contact-form">
+  <!-- <form action="" method="get"> -->
+    <div class="main">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="text" #search class="form-control text-center" placeholder="Search your favourite series" />
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+          <button type="submit" (click)="onNavigateSearch(search.value)" class="btn btn-primary btn-block">SearchEinsteinium</button>
+        </div>
+      </div>
+    </div>
+  <!-- </form> -->
+  <div class="card" *ngIf="loading">
+    <div class="card-header">
+      Search results for : {{search.value}}
+    </div>
+    <div class="card-body" *ngIf="seasons?.length == 0">
+      Sorry! You are worthless piece of shit.
+    </div>
+    <ul class="list-group list-group-flush" *ngIf="seasons?.length > 0">
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(1, paramOffset)">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1, paramOffset)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page, paramOffset)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1, paramOffset)">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.totalPages, paramOffset)">Last</a>
+        </li>
+      </ul>
+      <li class="list-group-item" *ngFor="let result of pagedSeasons">
+          <p class="float-left">{{result.title}}</p>
+          <a class="float-right" href="{{result.download_link}}">Download</a>
+        </li>
+
+    </ul>
+  </div>
+</div>

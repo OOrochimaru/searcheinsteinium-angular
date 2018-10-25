@@ -1,0 +1,36 @@
+<div class="container-fluid contact-form">
+    <div class="contact-image">
+        <img src="https://png.pngtree.com/svg/20150907/ufo_1351302.png" alt="rocket_contact"/>
+    </div>
+    <div class="main">
+        <h3>Aliensearch</h3>
+       <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" [formControl] = "queryFormControl" class="form-control text-center" placeholder="Search your favourite movies, series and animes"/>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-4">
+                <button (click)="search()" class="btn btn-primary btn-block">scavange</button>
+            </div>
+        </div>
+
+        
+      </div>
+
+      <div class="card" *ngIf="isSearched">
+          <div class="card-header">
+            Search results for : {{query}}
+          </div>
+          <div class="card-body" *ngIf="results?.length == 0">
+              Sorry! This Scavanging was worthless.
+            </div>
+
+          <ul class="list-group list-group-flush" *ngIf="results?.length > 0">
+            <li class="list-group-item" *ngFor="let result of results">
+              {{result.name}} <a class="float-right" href="{{result.url}}">Download</a>
+            </li>
+            
+          </ul>
+        </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container-fluid contact-form">
+  <div class="contact-image">
+    <img src="http://techforworld.com/wp-content/uploads/2013/11/file_search.jpg" alt="rocket_contact" />
+  </div>
+  <div class="main">
+    <h3>Search Einsteinium </h3>
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-5">
+
+        <footer>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./searchmovies']">Movies
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./searchseasons']">Seasons
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
