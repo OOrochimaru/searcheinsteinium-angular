@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Season } from '../model/season';
-let URI = `http://localhost:3000/`;
+let URI = `https://searcheinsteinbackend.herokuapp.com/`;
 @Injectable({
   providedIn: 'root'
 })
