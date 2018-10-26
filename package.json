@@ -1,13 +1,18 @@
 {
   "name": "movie-search",
   "version": "0.0.0",
+  "engines": {
+    "npm": "6.3.0",
+    "node": "8.11.3"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +27,8 @@
     "@angular/router": "^6.1.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "primeicons": "^1.0.0",
     "primeng": "^6.1.5",
     "rxjs": "~6.2.0",
