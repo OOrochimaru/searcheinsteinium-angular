@@ -22,9 +22,10 @@ export class MovieSearchComponent implements OnInit {
     console.log(title);
       this.apiService.searchMovie(title, rows, pageno).subscribe(data=>{
         this.loading = true;
-        this.movies = data.movie;
+        this.movies = data.movies;
         this.totalCount = data.totalCount;
         console.log("total count", this.totalCount);
+        console.log("data ", this.movies);
       })
   }
   paginate(event, title){
