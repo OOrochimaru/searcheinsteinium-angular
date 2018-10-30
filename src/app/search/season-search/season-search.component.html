@@ -1,17 +1,17 @@
 <div class="container-fluid contact-form">
   <!-- <form action="" method="get"> -->
-    <div class="main">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <input type="text" #search class="form-control text-center" placeholder="Search your favourite series" />
-          </div>
-        </div>
-        <div class="col-md-4 col-md-offset-4">
-          <button type="submit" (click)="onNavigateSearch(search.value)" class="btn btn-primary btn-block">SearchEinsteinium</button>
+  <div class="main">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <input type="text" #search class="form-control text-center" placeholder="Search your favourite series" />
         </div>
       </div>
+      <div class="col-md-4 col-md-offset-4">
+        <button type="submit" (click)="onNavigateSearch(search.value)" class="btn btn-primary btn-block">SearchEinsteinium</button>
+      </div>
     </div>
+  </div>
   <!-- </form> -->
   <div class="card" *ngIf="loading">
     <div class="card-header">
@@ -39,9 +39,10 @@
         </li>
       </ul>
       <li class="list-group-item" *ngFor="let result of pagedSeasons">
-          <p class="float-left">{{result.title}}</p>
-          <a class="float-right" href="{{result.download_link}}">Download</a>
-        </li>
+        <p class="float-left">{{result.title}}</p>
+        <a class="float-right" [routerLink]="['/playoptions']" [queryParams]="v: result.url">Play</a>
+        <a class="float-right" href="{{result.download_link}}">Download</a>
+      </li>
 
     </ul>
   </div>
