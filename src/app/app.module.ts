@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { SearchModule } from './search/search.module';
 import { PlayoptionsComponent } from './playoptions/playoptions.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { PlayoptionsComponent } from './playoptions/playoptions.component';
     AppRoutingModule,
     CoreModule,
     SearchModule,
+    BrowserAnimationsModule
     
   ],
   providers: [],
