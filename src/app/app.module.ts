@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { SearchModule } from './search/search.module';
+import { PlayoptionsComponent } from './playoptions/playoptions.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PlayoptionsComponent
   ],
   imports: [
     BrowserModule,
